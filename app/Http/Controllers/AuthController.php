@@ -85,10 +85,10 @@ class AuthController extends Controller
                 'message' => "User successfully registered 👍,  please verify your account 👉 <$request->email>",
             ], 200);
         } catch (\Throwable $th) {
-            //    throw $th;
-            return response()->json([
-                'message' => 'This error is from the backend, please contact the backend developer'
-            ], 500);
+               throw $th;
+            // return response()->json([
+            //     'message' => 'This error is from the backend, please contact the backend developer'
+            // ], 500);
         }
     }
 
