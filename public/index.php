@@ -59,3 +59,8 @@ if (DB::connection()->getDatabaseName()) {
 $response->send();
 
 $kernel->terminate($request, $response);
+
+
+
+
+?>
