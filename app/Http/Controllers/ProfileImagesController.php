@@ -51,7 +51,7 @@ class ProfileImagesController extends Controller
 
         $s3Url = '/photo/' . $photo;
         Storage::disk('s3')->put($s3Url, $file);
-        $image = "https://freelacner-services.s3.amazonaws.com/" . $photo;
+        $image = "https://freelacner-services.s3.amazonaws.com/" . $s3Url;
 
         $ProfileImages = ProfileImages::create([
           'photo' => $image,
