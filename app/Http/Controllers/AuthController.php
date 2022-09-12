@@ -78,8 +78,8 @@ class AuthController extends Controller
             try {
                 Mail::to(request()->email)->send(new SendMail($mail_data));
             } catch (\Throwable $th) {
-                //    throw $th; 
-                return response()->json(['message' => 'Mail was not sent!  check email address and try again ⚠️'], 401);
+                   throw $th; 
+                // return response()->json(['message' => 'Mail was not sent!  check email address and try again ⚠️'], 401);
             }
             return response()->json([
                 'message' => "User successfully registered 👍,  please verify your account 👉 <$request->email>",
