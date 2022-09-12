@@ -50,9 +50,8 @@ class ProfileImagesController extends Controller
         $photo = $user["id"] . $user["firstname"] . Str::random(5) . '.' . 'png';
 
         $s3Url = '/photo/' . $photo;
-        Storage::disk('s3')->put($s3Url, $file);
-        $image = "https://freelacner-services.s3.amazonaws.com" . $s3Url;
-
+        Storage::disk('s3')->put($s3Url, $file); 
+        $image = "https://freelacner-services.s3.amazonaws.com/photo/" . $photo;
         $ProfileImages = ProfileImages::create([
           'photo' => $image,
           "user_id" => request()->user_id
